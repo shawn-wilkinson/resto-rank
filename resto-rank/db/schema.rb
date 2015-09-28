@@ -11,42 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914001351) do
+ActiveRecord::Schema.define(version: 20150928014538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "polls", force: :cascade do |t|
-    t.string   "name"
-    t.string   "creator_email"
-    t.string   "description"
-    t.date     "event_date"
-    t.time     "event_time"
+  create_table "invitations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "poll_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "creator_id"
+    t.datetime "event_time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "rankings", force: :cascade do |t|
-    t.integer  "voter_id"
-    t.integer  "restaurant_id"
+    t.integer  "user_id"
+    t.integer  "option_id"
     t.integer  "rank"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.integer  "poll_id"
     t.string   "yelp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "voters", force: :cascade do |t|
-    t.integer  "poll_id"
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

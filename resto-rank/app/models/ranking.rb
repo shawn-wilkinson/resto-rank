@@ -1,4 +1,4 @@
 class Ranking < ActiveRecord::Base
-  belongs_to :restaurant
-  belongs_to :voter
+  belongs_to :option
+  belongs_to :user
 end
