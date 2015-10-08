@@ -1,9 +1,21 @@
-<h1>Welcome to Resto-Rank</h1>
+<div id="index-container">
+  <div class="left">
+    <h2>Welcome to Resto-Rank</h2>
+    <p>A streamlined approach to helping groups select a dining option.</p>
+  </div>
+  <div class="right">
+     <% if !logged_in? %>
+      <a href="/polls/new"><h3>Create Poll</h3></a>
+      <h3>View Polls</h3>
+    <% else %>
+      <h3>Log In</h3>
+      <h3>Sign Up</h3>
+      <div id="log-in-box">
+        <!-- ajaxed forms for entering user information for login / new user registration -->
+      </div>
+    <% end %>
+    </div>
+    <a href="/welcome/about">About Resto-Rank</a>
+  </div>
 
-<% if logged_in? %>
-  <h3>Create Poll</h3>
-  <h3>View Polls</h3>
-<% else %>
-  <h3>Log In</h3>
-  <h3>Sign Up</h3>
-<% end %>
+</div>

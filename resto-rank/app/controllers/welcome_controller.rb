@@ -1,7 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
-    @tacos = ['hi how are you?','I am fine']
+  end
+
+  def about
   end
 
 end
