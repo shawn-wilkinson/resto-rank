@@ -2,14 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+$dark: #FF983B;
+$light: #FFB03B;
+$white: #FFFFFF;
+$grey: #BAB2A6;
+
+
 #index-container{
-  background-color:blue;
+  background-color: $light;
   width: 500px;
   height:500px;
-  border: 1px solid lime;
   margin:auto;
-  padding:auto;
-  color:white;
+  padding:15px;
+  color:$dark;
+  text-shadow: 2px 2px $dark;
 
   .left{
     float:left;
@@ -19,6 +26,10 @@
     float:right;
     width:40%;
   }
+}
+
+body{
+  background-color: $white;
 }
 
 
