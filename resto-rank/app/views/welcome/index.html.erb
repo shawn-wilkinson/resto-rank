@@ -1,21 +1,23 @@
-<div id="index-container">
+<div id="text-container">
+  <h1>Round Table</h1>
   <div class="left">
-    <h2>Welcome to Resto-Rank</h2>
-    <p>A streamlined approach to helping groups select a dining option.</p>
+    <h4>What is Round Table?</h4>
+    <p>Going out to dinner with friends is fun; coming to a consensus is not. Round Table helps your group come to an agreement without the annoying back-and-forth. </p>
+    <a class="minor-link" href="/welcome/about">About Us</a>
   </div>
   <div class="right">
-     <% if !logged_in? %>
-      <a href="/polls/new"><h3>Create Poll</h3></a>
-      <h3>View Polls</h3>
+     <% if logged_in? %>
+      <a class="button" href="/polls/new"><h3>Create Poll</h3></a>
+      <a class="button" href="#"><h3>View Polls</h3></a>
     <% else %>
-      <h3>Log In</h3>
-      <h3>Sign Up</h3>
+      <a class="main-link" href="#"><h3>Log In</h3></a>
+      <a class="main-link" href="#"><h3>Sign Up</h3></a>
       <div id="log-in-box">
         <!-- ajaxed forms for entering user information for login / new user registration -->
       </div>
     <% end %>
     </div>
-    <a href="/welcome/about">About Resto-Rank</a>
+
   </div>
 
 </div>
