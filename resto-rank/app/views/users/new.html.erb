@@ -1,1 +1,12 @@
-new.html.erb
+
+
+<%= form_for :user, url: '/users' do |f| %>
+  Username: <%= f.text_field :name, class: 'field' %>
+  <BR>
+  Email: <%= f.text_field :email, class: 'field' %>
+  <BR>
+  Password: <%= f.password_field :password, class: 'field' %>
+  <BR><BR>
+  <%= f.submit "Sign Up"%>
+<% end %>
+<a class="minor-link" href="/">Main Page</a>

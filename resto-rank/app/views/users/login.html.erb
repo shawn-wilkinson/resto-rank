@@ -1,0 +1,14 @@
+<div id="text-container">
+  <h1>Round Table</h1>
+  <%= form_tag '/login', :method => :post do  %>
+    Username: <%= text_field_tag :name %>
+    <BR>
+    Password: <%= password_field_tag :password %>
+    <BR><BR>
+    <%= submit_tag "Log In"%>
+  <% end %>
+  <% if @error %>
+    <p><%= p @error %></p>
+  <% end %>
+  <a class="minor-link" href="/">Main Page</a>
+</div>

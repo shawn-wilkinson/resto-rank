@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get 'welcome/about' => 'welcome#about'
+  get '/login' => 'users#login'
+  get '/logout' => 'users#logout'
+  post '/login' => 'users#authenticate'
+
 
   resources :users
   resources :polls

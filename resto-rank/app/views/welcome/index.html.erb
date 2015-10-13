@@ -3,18 +3,16 @@
   <div class="left">
     <h4>What is Round Table?</h4>
     <p>Going out to dinner with friends is fun; coming to a consensus is not. Round Table helps your group come to an agreement without the annoying back-and-forth. </p>
-    <a class="minor-link" href="/welcome/about">About Us</a>
+    <a id="about-link" class="minor-link" href="/welcome/about">About Us</a>
   </div>
   <div class="right">
      <% if logged_in? %>
-      <a class="button" href="/polls/new"><h3>Create Poll</h3></a>
-      <a class="button" href="#"><h3>View Polls</h3></a>
+      <a id="create-poll-link" class="main-link" href="/polls/new"><h3>Create Poll</h3></a>
+      <a id="view-polls-link" class="main-link" href="#"><h3>View Polls</h3></a>
+      <a class="main-link" href="logout"><h3>Log Out</h3></a>
     <% else %>
-      <a class="main-link" href="#"><h3>Log In</h3></a>
-      <a class="main-link" href="#"><h3>Sign Up</h3></a>
-      <div id="log-in-box">
-        <!-- ajaxed forms for entering user information for login / new user registration -->
-      </div>
+      <a id="log-in-link" class="main-link" href="login"><h3>Log In</h3></a>
+      <a id="sign-up-link" class="main-link" href="users/new"><h3>Sign Up</h3></a>
     <% end %>
     </div>
 
